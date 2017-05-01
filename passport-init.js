@@ -10,7 +10,7 @@ module.exports = function(passport){
         
         //Tell passport which id to use for user
         
-		console.log('serializing user:',user.username);
+		console.log('serializing user:', user.username);
 		return done(null, user.username);
 	});
 
