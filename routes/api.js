@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 
+
 //Used for routes that must be authenticated.
 function isAuthenticated (req, res, next) {
 	// if user is authenticated in the session, call the next() to call the next request handler 
@@ -22,12 +23,6 @@ function isAuthenticated (req, res, next) {
 //Register the authentication middleware
 router.use('/posts', isAuthenticated);
 
-//router.use('/posts');
-
-router.route('/posts/:id')
-.get(function(req,res){
-   console.log(req.params.id); 
-});
 
 router.route('/posts')
 .get(function(req,res){
